@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div>
+    <form method="POST" action="/search">
+        <table>
+            <tr>
+                <td>Title</td>
+                <td><input type="text" name="title"/></td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td><input type="text" name="author"/></td>
+            </tr>
+            <tr>
+                <td>Describe</td>
+                <td><input type="text" name="describe"/></td>
+            </tr>
+            <tr>
+                <td>Content</td>
+                <td><input type="text" name="content"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Look for"/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div>
+    <ul>
+        <li th:each="file : ${files}">
+            <a th:href="${file}" th:text="${file}"/>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
